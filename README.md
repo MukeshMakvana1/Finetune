@@ -1,4 +1,4 @@
-# Kaliyo AI Model Fine-Tuning & Inference
+# AI Model Fine-Tuning & Inference
 
 This repository contains tools for fine-tuning the TinyLlama model on a custom dataset, merging the trained LoRA adapters, and running inference with a CLI chat interface.
 
@@ -79,4 +79,5 @@ This launches an interactive CLI chat session. Type `exit` or `quit` to end the 
 - **Model Paths**: ensure the folder `Tinyllama` exists before running the scripts.
 - **Checkpoints**: The merge script specifically targets `checkpoint-19`. If your training runs for fewer or more steps, please update the path in `merge_checkpoint_19.py` (line 9).
 - **Hardware**: Fine-tuning on CPU is slow. For faster results, ensure you have CUDA installed and modify `finetune.py` to remove `device_map={"": "cpu"}` or set it to `"auto"`.
+
 
