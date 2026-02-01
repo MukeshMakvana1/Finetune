@@ -6,7 +6,7 @@ This repository contains tools for fine-tuning the TinyLlama model on a custom d
 
 - **`dataset.json`**: The training dataset in JSON format containing instruction-response pairs.
 - **`finetune.py`**: Script to fine-tune the base TinyLlama model using LoRA (Low-Rank Adaptation).
-- **`merge_checkpoint_19.py`**: Script to merge the fine-tuned LoRA adapter (specifically checkpoint-19) with the base model.
+- **`merge_checkpoint.py`**: Script to merge the fine-tuned LoRA adapter (specifically checkpoint-19) with the base model.
 - **`test.py`**: A command-line interface (CLI) to chat with the merged, fine-tuned model.
 - **`requirement.txt`**: List of Python dependencies required to run the project.
 
@@ -79,3 +79,4 @@ This launches an interactive CLI chat session. Type `exit` or `quit` to end the 
 - **Model Paths**: ensure the folder `Tinyllama` exists before running the scripts.
 - **Checkpoints**: The merge script specifically targets `checkpoint-19`. If your training runs for fewer or more steps, please update the path in `merge_checkpoint_19.py` (line 9).
 - **Hardware**: Fine-tuning on CPU is slow. For faster results, ensure you have CUDA installed and modify `finetune.py` to remove `device_map={"": "cpu"}` or set it to `"auto"`.
+
