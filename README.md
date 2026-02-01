@@ -62,7 +62,7 @@ Once training is complete, you need to merge the adapter weights with the base m
 The script `merge_checkpoint_19.py` is hardcoded to look for **checkpoint-19**. Check your `tiny-finetuned` folder for the actual checkpoint number and update the script if necessary.
 
 ```bash
-python merge_checkpoint_19.py
+python merge_checkpoint.py
 ```
 - **Output**: The merged model will be saved to `tiny-finetuned-merged`.
 
@@ -79,5 +79,6 @@ This launches an interactive CLI chat session. Type `exit` or `quit` to end the 
 - **Model Paths**: ensure the folder `Tinyllama` exists before running the scripts.
 - **Checkpoints**: The merge script specifically targets `checkpoint-19`. If your training runs for fewer or more steps, please update the path in `merge_checkpoint_19.py` (line 9).
 - **Hardware**: Fine-tuning on CPU is slow. For faster results, ensure you have CUDA installed and modify `finetune.py` to remove `device_map={"": "cpu"}` or set it to `"auto"`.
+
 
 
